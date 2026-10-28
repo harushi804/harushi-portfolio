@@ -61,6 +61,35 @@ const works = [
     text: "販売中の自社製品。ひとつのGoogleシートから、Facebook（グループ・ページ）、Instagram、X、Threads、LinkedIn、TikTok、YouTubeへ、予約した時刻に順番に投稿します。シートごとのアカウント切り替え、投稿間隔の指定、承認待ちの多いFacebookグループの自動スキップなど、毎日の告知を仕組みにする機能を備えています。",
     points: ["7つのSNSに対応", "予約投稿", "スリープ中も実行", "複数シート運用", "Win/Mac対応"],
   },
+  {
+    title: "SNS投稿の素材をAIで作るツール「CMツール」",
+    category: "Python / 生成AI（Gemini・ChatGPT・Claude）",
+    image: "/images/CMツール画面.png",
+    text: "販売中の自社製品。商品の資料や販売ページを読み込み、切り口を変えた投稿文を1回に30本まで作成。X・Threads・Facebook・Instagram向けに文を作り分け、見出し入りの画像と、字幕・読み上げ付きの縦動画まで作ります。効果の約束や資料にない数字など「言い過ぎ」を自動で知らせ、AutoPosterと連携して予約投稿まで流せます。",
+    points: ["投稿文の量産", "SNSごとの作り分け", "画像・縦動画の生成", "言い過ぎチェック", "AutoPoster連携"],
+  },
+  {
+    title: "AIエージェントの「役員組織」で事業を運営",
+    category: "Claude Code / AIエージェント / 業務設計",
+    image: "/images/book_aiboard4.jpg",
+    text: "代表（人）が方針を決めて決裁し、AIの「社長室」が仕事を振り分け、事業ごとのAI役員（経営企画・ソフトウェア・メディア・コンテンツ・清掃・技術・監査）が分担する体制を自社で構築・運用。会社の決まり、役員会、決裁ログを文書にし、公開・お金・削除は人が決める前提で回しています。この仕組みは著書にもまとめています。",
+    points: ["AI役員の分担", "役員会・決裁ログ", "定時タスクで自動実行", "人が決裁する安全設計"],
+  },
+  {
+    title: "製品販売サイト「インフォマニュアル」",
+    category: "Web制作 / 販売ページ / マニュアル公開",
+    image: "/images/インフォマニュアル画面.png",
+    link: "https://info-manual.com/",
+    text: "自社製品（ASTAT225・AutoPoster・CMツール・SAツール・一冊工房）の販売ページと公開マニュアル、受託開発・研修・本づくりの案内をまとめたサイトを制作・運営。決済、特定商取引法の表記、アクセス解析まで含めて自分で整えています。",
+    points: ["製品ハブ", "販売ページ5製品", "公開マニュアル", "決済・アクセス解析"],
+  },
+];
+
+const books = [
+  ["AIに手順書を渡せば、事務は自動にできる", "何から始めればいいかわからない人のための自動化入門", "/images/book_automation2.jpg", "https://www.amazon.co.jp/dp/B0HMH42R13"],
+  ["SNSの投稿は、まとめて作って予約すれば続く", "小さな店のための自動投稿入門", "/images/book_autopost3.jpg", "https://www.amazon.co.jp/dp/B0HMLRN3QC"],
+  ["AIを役員にすれば、事業の全体が見渡せる", "一人社長のための、会社の決まり・役員会・決裁ログの作り方", "/images/book_aiboard4.jpg", "https://www.amazon.co.jp/dp/B0HMST7VSW"],
+  ["AIの質問に答えれば、仕事の経験は本になる", "企画から出版まで、自分の仕事を電子書籍にする手順", "/images/book_ebook5.jpg", "https://www.amazon.co.jp/dp/B0HMW35FZ7"],
 ];
 
 const services = [
@@ -68,6 +97,8 @@ const services = [
   ["AI", "AI活用・API連携", "OpenAI / Gemini / 外部APIを活用し、文章生成、分類、要約、案件判定、提案文作成を仕組み化します。"],
   ["予", "予約・顧客管理の自動化", "予約データ、顧客リスト、Googleカレンダー、連絡先などの同期・更新・重複防止に対応します。"],
   ["Py", "Pythonツール・業務アプリ開発", "Windows / Mac向けのPythonツール、データ分析、検証アプリ、クラウド常時稼働などを構築します。"],
+  ["研", "AI活用の研修・講師", "生成AIの仕事での使い方、手順書をAIに渡して事務を自動にする進め方、GAS入門など、対象・人数・時間に合わせて内容を組みます。"],
+  ["本", "電子書籍（Kindle本）づくり", "取材から構成・原稿・表紙・EPUB・KDP登録の準備まで、AIと一緒に仕事のノウハウを1冊の本にします。"],
 ];
 
 const strengths = [
@@ -165,6 +196,7 @@ export default function HarushiPortfolioOnePage() {
           <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
             <a href="#services" className="hover:text-slate-950">対応領域</a>
             <a href="#works" className="hover:text-slate-950">制作実績</a>
+            <a href="#books" className="hover:text-slate-950">著書</a>
             <a href="#career" className="hover:text-slate-950">経歴</a>
             <a href="#contact" className="hover:text-slate-950">相談</a>
           </nav>
@@ -243,6 +275,7 @@ export default function HarushiPortfolioOnePage() {
                     <p className="mb-3 inline-flex w-fit rounded-full bg-white px-3 py-1 text-xs font-semibold text-blue-700 shadow-sm">{work.category}</p>
                     <h3 className="text-2xl font-bold tracking-tight text-slate-950 md:text-3xl">{work.title}</h3>
                     <p className="mt-4 leading-8 text-slate-600">{work.text}</p>
+                    {work.link && <a href={work.link} target="_blank" rel="noreferrer" className="mt-3 w-fit text-sm font-semibold text-blue-700 hover:underline">{work.link.replace("https://", "").replace(/\/$/, "")} ↗</a>}
                     <div className="mt-5 flex flex-wrap gap-2">
                       {work.points.map((point) => <span key={point} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-medium text-slate-700">{point}</span>)}
                     </div>
@@ -250,6 +283,20 @@ export default function HarushiPortfolioOnePage() {
                 </motion.article>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section id="books" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+          <SectionTitle eyebrow="Books" title="著書（Kindle本）" description="坂本検の名前でKindle本を6冊出版。業務自動化・AI活用の4冊は、AIと一緒に原稿を作り、自分で点検して出版しました。" />
+          <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+            {books.map(([title, subtitle, cover, url]) => (
+              <a key={title} href={url} target="_blank" rel="noreferrer" className="group rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/70">
+                <img src={cover} alt={title} className="aspect-[5/8] w-full rounded-2xl border border-slate-100 object-cover" />
+                <h3 className="mt-4 font-bold leading-6 text-slate-950">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-500">{subtitle}</p>
+                <p className="mt-3 text-sm font-semibold text-blue-700 group-hover:underline">Amazonで見る ↗</p>
+              </a>
+            ))}
           </div>
         </section>
 
