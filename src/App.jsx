@@ -45,7 +45,21 @@ const works = [
     category: "Python / Pandas / GUI",
     image: "/images/ASTATカバー画像.png",
     text: "Webデータ取得、Pandasによる指標計算、バックテスト、統計分析、レポート出力までを自動化したデスクトップアプリ。",
-    points: ["Webデータ取得", "統計分析", "バックテスト", "Win/Mac対応", "ライセンス認証"],
+    points: ["Webデータ取得", "統計分析", "バックテスト", "Win/Mac対応", "購入者認証"],
+  },
+  {
+    title: "ストアカ講座運営の自動化ツール「SAツール」",
+    category: "Python / Googleシート / Googleカレンダー / Gmail",
+    image: "/images/SAツール画面.png",
+    text: "ストアカの先生向けに販売中の自社製品。Googleシートに書いた設定どおりに、日程の一括追加・削除、予約のカレンダー登録と定型返信、お知らせ配信、受講日時を基準にしたステップ配信までを行います。予約通知メールを検知しての自動処理や、カレンダーの予定と重なる空き枠の自動削除（ダブルブッキング防止）にも対応。",
+    points: ["日程の一括追加・削除", "予約処理の自動化", "ステップ配信", "ダブルブッキング防止", "Win/Mac対応"],
+  },
+  {
+    title: "7つのSNSへの予約自動投稿ツール「AutoPoster」",
+    category: "Python / Googleシート / SNS連携",
+    image: "/images/AutoPoster画面.png",
+    text: "販売中の自社製品。ひとつのGoogleシートから、Facebook（グループ・ページ）、Instagram、X、Threads、LinkedIn、TikTok、YouTubeへ、予約した時刻に順番に投稿します。シートごとのアカウント切り替え、投稿間隔の指定、承認待ちの多いFacebookグループの自動スキップなど、毎日の告知を仕組みにする機能を備えています。",
+    points: ["7つのSNSに対応", "予約投稿", "スリープ中も実行", "複数シート運用", "Win/Mac対応"],
   },
 ];
 
@@ -67,6 +81,7 @@ const stats = [
   ["30万円", "法人GASシステム構築", "複数スプレッドシートを一元管理する専用UIを構築。検索・転記作業の削減、人的ミス防止を実現。"],
   ["完全自動化", "自社AI自動投稿システム", "記事生成、画像生成、WordPress投稿、SNS同時投稿までをAPI連携で自動化。"],
   ["リアルタイム同期", "予約・顧客データ連携", "予約システム、Googleカレンダー、iCloud連絡先、顧客リストを連携。"],
+  ["165人", "ストアカ講座の受講者", "ストアカで講座を151回開催し、レビュー65件（2026年10月時点）。分かりやすく教える経験を、導入後の説明・引き継ぎにも活かします。"],
 ];
 
 const careerCards = [
@@ -193,7 +208,7 @@ export default function HarushiPortfolioOnePage() {
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-10 md:px-8">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {stats.map(([value, title, text]) => (
               <div key={title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                 <p className="text-3xl font-bold text-blue-700">{value}</p>
